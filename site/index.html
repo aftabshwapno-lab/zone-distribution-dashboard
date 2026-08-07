@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Zone Distribution Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <div class="eyebrow">NETWORK INTELLIGENCE</div>
+      <h1 id="dashboard-title">Zone Distribution Dashboard</h1>
+      <p id="dashboard-subtitle">Outlet network, leadership, format, geography and location profile</p>
+    </div>
+    <div class="hero-meta">
+      <span id="source-badge" class="meta-badge">Loading source…</span>
+      <span id="quality-badge" class="meta-badge">Validating…</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="filter-panel">
+      <div class="filter-row primary-filters">
+        <label class="field search-field">
+          <span>Search all columns</span>
+          <input id="global-search" type="search" placeholder="Code, outlet, officer, area, district…">
+        </label>
+        <label class="field">
+          <span>Regional Head</span>
+          <select id="filter-rho" data-filter="Regional Head HR Name"></select>
+        </label>
+        <label class="field">
+          <span>Zonal HR</span>
+          <select id="filter-zonal" data-filter="Zonal HR Name"></select>
+        </label>
+        <label class="field">
+          <span>Division</span>
+          <select id="filter-division" data-filter="Division"></select>
+        </label>
+        <label class="field">
+          <span>District</span>
+          <select id="filter-district" data-filter="District"></select>
+        </label>
+        <label class="field">
+          <span>Format</span>
+          <select id="filter-format" data-filter="Format"></select>
+        </label>
+        <label class="field">
+          <span>PNP Status</span>
+          <select id="filter-pnp" data-filter="PNP Non PNP status"></select>
+        </label>
+        <label class="field">
+          <span>Outlet Status</span>
+          <select id="filter-status" data-filter="Status"></select>
+        </label>
+      </div>
+
+      <div id="advanced-filters" class="filter-row advanced-filters hidden">
+        <label class="field">
+          <span>Area</span>
+          <select id="filter-area" data-filter="Area"></select>
+        </label>
+        <label class="field">
+          <span>Location Type</span>
+          <select id="filter-location" data-filter="Location Type"></select>
+        </label>
+        <label class="field">
+          <span>City / Town Type</span>
+          <select id="filter-citytype" data-filter="Location Type(Dv,Ds,T)"></select>
+        </label>
+        <label class="field">
+          <span>Population Density</span>
+          <select id="filter-density" data-filter="Population Density"></select>
+        </label>
+        <label class="field">
+          <span>Income Level</span>
+          <select id="filter-income" data-filter="Income level"></select>
+        </label>
+        <label class="field">
+          <span>Floor Type</span>
+          <select id="filter-floor" data-filter="Floor type"></select>
+        </label>
+        <label class="field">
+          <span>Layout Shape</span>
+          <select id="filter-layout" data-filter="Layout shape"></select>
+        </label>
+      </div>
+
+      <div class="action-row">
+        <div class="action-left">
+          <button id="advanced-toggle" class="btn ghost" type="button">More filters</button>
+          <button id="reset-filters" class="btn ghost" type="button">Reset filters</button>
+        </div>
+        <div class="action-right">
+          <button id="column-toggle" class="btn ghost" type="button">Choose columns</button>
+          <button id="download-csv" class="btn primary" type="button">Download filtered CSV</button>
+        </div>
+      </div>
+
+      <div id="column-panel" class="column-panel hidden">
+        <div class="column-panel-head">
+          <strong>Visible columns</strong>
+          <div>
+            <button id="show-all-columns" class="mini-btn" type="button">Show all</button>
+            <button id="core-columns" class="mini-btn" type="button">Core view</button>
+          </div>
+        </div>
+        <div id="column-options" class="column-options"></div>
+      </div>
+    </section>
+
+    <section id="kpi-grid" class="kpi-grid"></section>
+
+    <section class="chart-grid">
+      <article class="chart-card">
+        <div class="card-heading">
+          <div><span class="section-kicker">FORMAT</span><h2>Store format mix</h2></div>
+        </div>
+        <div id="chart-format" class="chart-body"></div>
+      </article>
+      <article class="chart-card">
+        <div class="card-heading">
+          <div><span class="section-kicker">OWNERSHIP</span><h2>Outlet status mix</h2></div>
+        </div>
+        <div id="chart-status" class="chart-body"></div>
+      </article>
+      <article class="chart-card">
+        <div class="card-heading">
+          <div><span class="section-kicker">GEOGRAPHY</span><h2>Top divisions</h2></div>
+        </div>
+        <div id="chart-division" class="chart-body"></div>
+      </article>
+      <article class="chart-card">
+        <div class="card-heading">
+          <div><span class="section-kicker">LOCATION PROFILE</span><h2>Location type mix</h2></div>
+        </div>
+        <div id="chart-location" class="chart-body"></div>
+      </article>
+    </section>
+
+    <section class="table-card">
+      <div class="table-toolbar">
+        <div>
+          <span class="section-kicker">DETAIL VIEW</span>
+          <h2 id="table-title">Outlet-wise Zone Distribution</h2>
+          <p id="table-summary">Loading rows…</p>
+        </div>
+        <label class="page-size">
+          <span>Rows per page</span>
+          <select id="page-size">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="250">250</option>
+            <option value="all">All</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="table-hint">Click any column heading to sort. Click again to reverse the order. The first three columns remain frozen while you scroll horizontally.</div>
+      <div class="table-wrap">
+        <table id="data-table">
+          <thead><tr id="table-head"></tr></thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button id="prev-page" class="btn ghost" type="button">Previous</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-page" class="btn ghost" type="button">Next</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>Refresh workflow:</strong> replace the single Excel workbook in <code>/data</code> with any filename, keep the required headers unchanged, and commit. GitHub Actions rebuilds this dashboard automatically.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "requiredHeaders": [
+    "SL",
+    "CODE",
+    "Outlet Name",
+    "Regional Head ID",
+    "Regional Head HR Name",
+    "Leader",
+    "Regional Head Contact",
+    "Zonal ID",
+    "Zonal HR Name",
+    "Zonal",
+    "Zonal Contact",
+    "Launching Date",
+    "SFT",
+    "Format",
+    "Division",
+    "District",
+    "Area",
+    "PNP Non PNP status",
+    "Status",
+    "Geo Location",
+    "Location Type",
+    "Location Type(Dv,Ds,T)",
+    "Population Density",
+    "Income level",
+    "Floor type",
+    "Layout shape"
+  ],
+  "numericColumns": [
+    "SL",
+    "SFT"
+  ],
+  "dateColumns": [
+    "Launching Date"
+  ],
+  "urlColumns": [
+    "Geo Location"
+  ],
+  "uniqueKey": "CODE",
+  "headerScanRows": 20
+}

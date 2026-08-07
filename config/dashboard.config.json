@@ -1,0 +1,10 @@
+{
+  "title": "Zone Distribution Dashboard",
+  "subtitle": "Outlet network, leadership, format, geography and location profile",
+  "tableTitle": "Outlet-wise Zone Distribution",
+  "defaultPageSize": 100,
+  "defaultSort": {
+    "column": "SL",
+    "direction": "asc"
+  }
+}
