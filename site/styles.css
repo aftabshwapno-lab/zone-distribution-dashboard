@@ -129,59 +129,324 @@ code{background:#eaf2f5;padding:2px 5px;border-radius:4px}
 }
 
 
+/* ==========================================================
+   SOLID DARK THEME v7 — NO GLASS, NO TRANSPARENCY
+   Deliberately uses !important on theme properties so the
+   dark theme cannot be overridden by older rules.
+   ========================================================== */
+
+html,
+body {
+  background: #081117 !important;
+  color: #f3f8fb !important;
+}
+
+body {
+  background-image: none !important;
+}
+
+/* Header */
+.hero {
+  background: #102a39 !important;
+  background-image: linear-gradient(135deg, #102a39 0%, #153e53 100%) !important;
+  color: #ffffff !important;
+  border-bottom: 4px solid #ff4f72 !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.38) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.hero::before,
+.hero::after {
+  display: none !important;
+}
+.hero h1,
+.hero p,
+.eyebrow,
+.meta-badge {
+  color: #ffffff !important;
+}
+.hero p { color: #d9e9f2 !important; }
+.eyebrow { color: #87d8f4 !important; }
+.meta-badge {
+  background: #172f3d !important;
+  border-color: #365464 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Main cards and containers */
+.filter-panel,
+.table-card,
+.chart-card,
+.kpi,
+.footer {
+  background: #111c24 !important;
+  background-image: none !important;
+  border: 1px solid #293b46 !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.30) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.filter-panel::before,
+.filter-panel::after,
+.table-card::before,
+.table-card::after,
+.chart-card::before,
+.chart-card::after,
+.kpi::after {
+  display: none !important;
+}
+
+/* Labels / titles */
+.field span,
+.page-size span,
+.kpi-label,
+.kpi-note,
+.table-toolbar p,
+.table-hint,
+.footer,
+#page-info {
+  color: #b8ccd7 !important;
+}
+.card-heading h2,
+.table-toolbar h2,
+.kpi-value,
+.donut-center,
+.legend-value,
+.bar-value {
+  color: #ffffff !important;
+}
+.section-kicker { color: #ff7893 !important; }
+
+/* Inputs and select menus */
+.field input,
+.field select,
+.page-size select {
+  background: #0b151c !important;
+  color: #f5fbff !important;
+  border: 1px solid #334956 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.field input::placeholder {
+  color: #8fa7b5 !important;
+  opacity: 1 !important;
+}
+.field input:focus,
+.field select:focus,
+.page-size select:focus {
+  border-color: #55b4da !important;
+  box-shadow: 0 0 0 3px rgba(85,180,218,.18) !important;
+}
+select option {
+  background: #0b151c !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.btn,
+.mini-btn {
+  background: #182832 !important;
+  color: #edf8fc !important;
+  border-color: #344c59 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.btn:hover,
+.mini-btn:hover {
+  background: #203542 !important;
+}
+.btn.primary {
+  background: #ff4f72 !important;
+  border-color: #ff4f72 !important;
+  color: #ffffff !important;
+}
+.btn.primary:hover {
+  background: #ff3b62 !important;
+}
+
+/* Column chooser */
+.column-panel {
+  border-top-color: #293b46 !important;
+}
+.column-option {
+  color: #e6f2f7 !important;
+}
+
+/* KPI cards */
+.kpi {
+  background: #13212b !important;
+}
+.kpi::before {
+  background: #24a6d6 !important;
+}
+.kpi.accent::before {
+  background: #ff4f72 !important;
+}
+
+/* Charts */
+.legend-row,
+.bar-row {
+  background: #172731 !important;
+  color: #edf8fc !important;
+  border-color: #263a45 !important;
+}
+.legend-label,
+.bar-label {
+  color: #e8f3f8 !important;
+}
+.bar-track {
+  background: #263944 !important;
+}
+.bar-fill {
+  background: linear-gradient(90deg,#1794c2,#6dd5ef) !important;
+}
+.donut::after {
+  background: #0d171e !important;
+  box-shadow: inset 0 0 0 1px #2b3c46 !important;
+}
+
+/* Table */
+.table-hint {
+  background: #14232c !important;
+  border-top-color: #293b46 !important;
+  border-bottom-color: #293b46 !important;
+}
+.table-wrap,
+table {
+  background: #0f1921 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+th {
+  background: #125f7d !important;
+  background-image: linear-gradient(180deg,#176f91 0%,#105b77 100%) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+th:hover {
+  background: #187b9f !important;
+}
+th .sort-mark {
+  color: #d9eff7 !important;
+}
+td {
+  background: #0f1921 !important;
+  color: #edf7fb !important;
+  border-right-color: #263843 !important;
+  border-bottom-color: #263843 !important;
+}
+tbody tr:nth-child(even) td {
+  background: #14222b !important;
+}
+tbody tr:hover td {
+  background: #1c303c !important;
+}
+td.numeric {
+  color: #ffffff !important;
+}
+td a {
+  color: #78d8ff !important;
+}
+td a:hover {
+  color: #b8edff !important;
+}
+
+/* Frozen table columns */
+tbody td.sticky-col-1,
+tbody td.sticky-col-2,
+tbody td.sticky-col-3 {
+  background: #0f1921 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+tbody tr:nth-child(even) td.sticky-col-1,
+tbody tr:nth-child(even) td.sticky-col-2,
+tbody tr:nth-child(even) td.sticky-col-3 {
+  background: #14222b !important;
+}
+tbody tr:hover td.sticky-col-1,
+tbody tr:hover td.sticky-col-2,
+tbody tr:hover td.sticky-col-3 {
+  background: #1c303c !important;
+}
+
+/* Pagination and footer */
+.pagination {
+  background: #111c24 !important;
+  border-top-color: #293b46 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.footer {
+  color: #c8dae3 !important;
+}
+code {
+  background: #1c2d37 !important;
+  color: #ffffff !important;
+}
+.empty-state {
+  color: #c4d7e0 !important;
+}
+
+/* Scrollbars */
+.table-wrap {
+  scrollbar-color: #415966 #0b151c;
+}
+.table-wrap::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+.table-wrap::-webkit-scrollbar-track {
+  background: #0b151c;
+}
+.table-wrap::-webkit-scrollbar-thumb {
+  background: #415966;
+  border: 2px solid #0b151c;
+  border-radius: 10px;
+}
+
+
 /* ============================================================
-   Dropdown dark-theme fix
-   Makes native select controls and dropdown option lists dark
-   with white letters for Zone Distribution Dashboard.
+   Dark native dropdown fix v2
+   Added on TOP of the existing solid dark theme.
    ============================================================ */
 
 html{
-  color-scheme: dark;
+  color-scheme: dark !important;
 }
 
 .field select,
 .page-size select,
 select{
-  background:#1b2730 !important;
+  background:#0b151c !important;
   color:#f5fbff !important;
-  border-color:#4b6574 !important;
+  border-color:#334956 !important;
   color-scheme:dark !important;
-  appearance:auto;
-  -webkit-appearance:menulist;
-}
-
-.field select:focus,
-.page-size select:focus,
-select:focus{
-  border-color:#67b6d4 !important;
-  box-shadow:0 0 0 3px rgba(103,182,212,.16) !important;
 }
 
 .field select option,
 .page-size select option,
 select option{
-  background:#0f1921 !important;
+  background:#0b151c !important;
   color:#f5fbff !important;
 }
 
 .field select optgroup,
 .page-size select optgroup,
 select optgroup{
-  background:#0f1921 !important;
+  background:#0b151c !important;
   color:#ffffff !important;
-  font-style:normal !important;
 }
 
 .field select option:checked,
 .page-size select option:checked,
 select option:checked{
   background:#1f5fbf !important;
-  color:#ffffff !important;
-}
-
-.field select option:hover,
-.page-size select option:hover,
-select option:hover{
-  background:#24455a !important;
   color:#ffffff !important;
 }
