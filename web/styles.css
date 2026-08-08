@@ -129,273 +129,59 @@ code{background:#eaf2f5;padding:2px 5px;border-radius:4px}
 }
 
 
-/* ===========================================
-   Complete Dark Theme (Solid / Non-Glass)
-   Safe visual overrides only
-   =========================================== */
-
-:root{
-  --ink:#f2f7fb;
-  --muted:#a9bcc9;
-  --navy:#0a2231;
-  --navy-2:#1f95c2;
-  --red:#ff5a7d;
-  --red-soft:#33131c;
-  --cyan:#101e28;
-  --line:#263844;
-  --panel:#111c25;
-  --canvas:#0a1319;
-  --shadow:0 12px 28px rgba(0,0,0,.32);
-}
+/* ============================================================
+   Dropdown dark-theme fix
+   Makes native select controls and dropdown option lists dark
+   with white letters for Zone Distribution Dashboard.
+   ============================================================ */
 
 html{
-  min-height:100%;
-  background:#0a1319;
+  color-scheme: dark;
 }
 
-body{
-  color:var(--ink);
-  background:#0a1319;
-}
-
-.hero{
-  position:sticky;
-  top:0;
-  z-index:30;
-  background:linear-gradient(135deg, #0d2533, #14384c);
-  color:#f7fbff;
-  border-bottom:3px solid var(--red);
-  box-shadow:0 12px 28px rgba(0,0,0,.30);
-}
-.hero h1{
-  color:#ffffff;
-}
-.hero p{
-  color:#d7e7f0;
-}
-.eyebrow{
-  color:#94d7ef;
-}
-.meta-badge{
-  color:#f4fbff;
-  border:1px solid #315062;
-  background:#13232e;
-  box-shadow:none;
-}
-
-.filter-panel,
-.table-card,
-.chart-card{
-  background:#111c25;
-  border:1px solid #243640;
-  border-radius:14px;
-  box-shadow:var(--shadow);
-}
-
-.field span,
-.page-size span{
-  color:#c9d9e2;
-}
-
-.field input,
 .field select,
-.page-size select{
-  color:#f3fbff;
-  border:1px solid #304754;
-  border-radius:9px;
-  background:#0d171f;
-  box-shadow:none;
+.page-size select,
+select{
+  background:#1b2730 !important;
+  color:#f5fbff !important;
+  border-color:#4b6574 !important;
+  color-scheme:dark !important;
+  appearance:auto;
+  -webkit-appearance:menulist;
 }
-.field input::placeholder{
-  color:#92a9b7;
-}
-.field input:focus,
+
 .field select:focus,
-.page-size select:focus{
-  border-color:#4aa9cf;
-  box-shadow:0 0 0 3px rgba(74,169,207,.16);
+.page-size select:focus,
+select:focus{
+  border-color:#67b6d4 !important;
+  box-shadow:0 0 0 3px rgba(103,182,212,.16) !important;
 }
 
-.btn{
-  color:#ecf7fb;
-  border:1px solid #304654;
-  border-radius:9px;
-  background:#162530;
-  box-shadow:none;
-}
-.btn:hover{
-  background:#1a2e3b;
-}
-.btn.primary{
-  background:#ff5a7d;
-  border-color:#ff5a7d;
-  color:#ffffff;
-}
-.btn.primary:hover{
-  background:#ff476e;
-}
-.btn.ghost:hover{
-  background:#1a2e3b;
+.field select option,
+.page-size select option,
+select option{
+  background:#0f1921 !important;
+  color:#f5fbff !important;
 }
 
-.column-panel{
-  border-top:1px solid #22333e;
-}
-.column-option{
-  color:#e4f1f6;
-}
-.mini-btn{
-  color:#eaf6fb;
-  border:1px solid #304654;
-  background:#162530;
+.field select optgroup,
+.page-size select optgroup,
+select optgroup{
+  background:#0f1921 !important;
+  color:#ffffff !important;
+  font-style:normal !important;
 }
 
-.kpi{
-  background:#13202a;
-  border:1px solid #243845;
-  border-radius:14px;
-  box-shadow:var(--shadow);
-  color:#f0f7fb;
-}
-.kpi:before{
-  background:#1f95c2;
-}
-.kpi.accent:before{
-  background:#ff5a7d;
-}
-.kpi-label{
-  color:#b5c9d4;
-}
-.kpi-value{
-  color:#ffffff;
-}
-.kpi-note{
-  color:#96adb9;
+.field select option:checked,
+.page-size select option:checked,
+select option:checked{
+  background:#1f5fbf !important;
+  color:#ffffff !important;
 }
 
-.section-kicker{
-  color:#ff8fa7;
-}
-.card-heading h2,
-.table-toolbar h2{
-  color:#ffffff;
-}
-.table-toolbar p{
-  color:#b5c6d0;
-}
-
-.legend-row,
-.bar-row{
-  color:#eef7fb;
-  border:none;
-  background:#162530;
-  border-radius:8px;
-  padding:6px 8px;
-}
-.legend-value,
-.bar-value{
-  color:#ffffff;
-}
-.bar-track{
-  background:#223742;
-}
-.bar-fill{
-  background:linear-gradient(90deg,#1f95c2,#7cd7ef);
-}
-.donut:after{
-  background:#0e171e;
-  box-shadow:inset 0 0 0 1px #243642;
-}
-.donut-center{
-  color:#ffffff;
-}
-
-.table-hint{
-  background:#14232d;
-  color:#c4d7e0;
-  border-top:1px solid #223540;
-  border-bottom:1px solid #223540;
-}
-
-.table-wrap{
-  background:#111c25;
-}
-
-table{
-  background:#111c25;
-}
-
-th{
-  background:linear-gradient(180deg, #14698a, #0e5672);
-  color:#ffffff;
-  box-shadow:none;
-}
-th:hover{
-  background:linear-gradient(180deg, #16759a, #11627f);
-}
-th .sort-mark{
-  color:#d9eef6;
-}
-
-td{
-  color:#edf7fb;
-  border-right:1px solid #223540;
-  border-bottom:1px solid #223540;
-}
-tbody tr:nth-child(even) td{
-  background:#13212b;
-}
-tbody tr:hover td{
-  background:#1a2d39;
-}
-td.numeric{
-  color:#ffffff;
-}
-td a{
-  color:#8ddfff;
-}
-td a:hover{
-  color:#bdf0ff;
-}
-
-tbody td.sticky-col-1,
-tbody td.sticky-col-2,
-tbody td.sticky-col-3{
-  background:#111c25;
-}
-tbody tr:nth-child(even) td.sticky-col-1,
-tbody tr:nth-child(even) td.sticky-col-2,
-tbody tr:nth-child(even) td.sticky-col-3{
-  background:#13212b;
-}
-tbody tr:hover td.sticky-col-1,
-tbody tr:hover td.sticky-col-2,
-tbody tr:hover td.sticky-col-3{
-  background:#1a2d39;
-}
-
-.pagination{
-  border-top:1px solid #223540;
-  background:#111c25;
-}
-#page-info{
-  color:#d7e9f2;
-}
-
-.footer{
-  color:#d4e6ee;
-  margin-top:14px;
-  padding:12px 14px;
-  background:#111c25;
-  border:1px solid #243640;
-  border-radius:12px;
-  box-shadow:var(--shadow);
-}
-code{
-  background:#1a2b36;
-  color:#f3fbff;
-}
-
-.empty-state{
-  color:#cfdee6;
+.field select option:hover,
+.page-size select option:hover,
+select option:hover{
+  background:#24455a !important;
+  color:#ffffff !important;
 }
